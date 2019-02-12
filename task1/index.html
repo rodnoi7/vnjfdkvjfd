@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Task_1</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<script src="https://fb.me/react-15.0.0.js"></script>
+	<script src="https://fb.me/react-dom-15.0.0.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+<div class='d-flex justify-content-around'>
+	<div id="p1"></div>
+	<div id="p2"></div>
+	<div id="p3"></div>
+</div>
+
+
+	<script type="text/babel">
+	    function Film(props) {
+	        return (
+	            <div className="person">
+	            	<img src={props.src}/>
+	                <h1>Name: {props.name}</h1>
+	                <p>Age: {props.age}</p>
+	            </div>
+	        );
+    	}
+
+	    const p1 = document.getElementById('p1');
+	    const p2 = document.getElementById('p2');
+	    const p3 = document.getElementById('p3');
+
+	    ReactDOM.render(<Film src='img/avengers.jpg' name="Avengers. Infinity war." age="2018" />, p1);
+	    ReactDOM.render(<Film src='img/venom.jpg' name="Venom" age="2018" />, p2);
+	    ReactDOM.render(<Film src='img/supernatural.jpeg' name="Supernatural" age="2005" />, p3);
+	</script>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+</html>

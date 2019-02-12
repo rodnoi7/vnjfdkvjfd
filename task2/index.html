@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Spaces</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+<body>
+
+<!-- Корневой элемент, куда реакт будет добавлять остальные элементы и компоненты -->
+<div id="header"></div>
+<div id="body" class='container'></div>
+<div id='footer'></div>
+
+<script src="https://fb.me/react-15.0.0.js"></script>
+<script src="https://fb.me/react-dom-15.0.0.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+<script type="text/babel">
+
+    function Header(props) {
+		return React.createElement('div', {className:'header'},
+			React.createElement('div', {className:'navbar navbar-dark bg-dark'}, 
+				React.createElement('a', {href:'#'}, 
+					React.createElement('h1', {className:'font-weight-bold'}, props.logo)
+				),
+				React.createElement('form', {className:'form-inline my-2 my-lg-0'},
+					React.createElement('input', {className:'form-control mr-sm-2'}, null),
+					React.createElement('button', {className:'btn btn-outline-success my-2 my-sm-0'}, props.search)
+				)
+			)			
+		);
+	}
+
+	function Menu(props) {
+		return React.createElement('div', {className:'row'},
+			React.createElement('div', {className:'col-3'},
+				React.createElement('a', {className:'list-group-item list-group-item-action bg-secondary text-light d-flex justify-content-center', href:'#'},
+					React.createElement('i', {className:'fas fa-download'}, props.zone)
+				),
+				React.createElement('a', {className:'list-group-item list-group-item-action bg-secondary text-light d-flex justify-content-center', href:'#'}, 
+					React.createElement('i', {className:'fas fa-music'}, props.muz)
+				),
+				React.createElement('a', {className:'list-group-item list-group-item-action bg-secondary text-light d-flex justify-content-center', href:'#'}, 
+					React.createElement('i', {className:'fas fa-heart'}, props.dating)
+				),
+				React.createElement('a', {className:'list-group-item list-group-item-action bg-secondary text-light d-flex justify-content-center', href:'#'}, 
+					React.createElement('i', {className:'fas fa-pen-fancy'}, props.blogs)
+				),
+				React.createElement('a', {className:'list-group-item list-group-item-action bg-secondary text-light d-flex justify-content-center', href:'#'}, 
+					React.createElement('i', {className:'fas fa-users'}, props.groups)
+				),
+				React.createElement('a', {className:'list-group-item list-group-item-action bg-secondary text-light d-flex justify-content-center', href:'#'}, 
+					React.createElement('i', {className:'fas fa-user-edit'}, props.forum)
+				),
+				React.createElement('a', {className:'list-group-item list-group-item-action bg-secondary text-light d-flex justify-content-center', href:'#'}, 
+					React.createElement('i', {className:'fas fa-comments'}, props.chat)
+				),
+				React.createElement('a', {className:'list-group-item list-group-item-action bg-secondary text-light d-flex justify-content-center', href:'#'}, 
+					React.createElement('i', {className:'fas fa-gamepad'}, props.games)
+				),
+			),
+			React.createElement('div', {className:'col-9'}, 
+				React.createElement('div', {className:'card text-center'},
+					React.createElement('div', {className:'card-header'},
+						React.createElement('ul', {className:'nav nav-tabs card-header-tabs'},
+							React.createElement('li', {className:'nav-item'},
+								React.createElement('a', {className:'nav-link active', href:'#'}, "Новости")
+								),
+							React.createElement('li', {className:'nav-item'},
+								React.createElement('a', {className:'nav-link', href:'#'}, "Связаться")
+								),
+							React.createElement('li', {className:'nav-item'},
+								React.createElement('a', {className:'nav-link', href:'#'}, "Написать")
+								),
+							)
+						),
+						React.createElement('div', {className:'card-body text-center'},
+							React.createElement('h5', {className:'card-title'}, "День рождения нашего сайта!!!"),
+							React.createElement('p', {className:'card-text'}, "Сегодня нашему сервису исполняется 20 лет!!!"),
+							React.createElement('a', {href:'#', className:'btn btn-primary'}, "Поздравить")
+					)
+				)
+			)
+		);
+	}
+
+	function Footer(props) {
+		return React.createElement('div', {className:'footer'},
+			React.createElement('nav', {className:'nav nav-pills'}, 
+				React.createElement('a', {className:'nav-item nav-link', href:'#'}, props.regulations),
+				React.createElement('a', {className:'nav-item nav-link', href:'#'}, props.about),
+				React.createElement('a', {className:'nav-item nav-link', href:'#'}, props.help),
+				React.createElement('a', {className:'nav-item nav-link', href:'#'}, props.advertising),
+				React.createElement('a', {className:'nav-item nav-link', href:'#'}, props.contacts),
+			)
+		);
+	}
+
+    const nav= (<div>
+        <Header logo="Spaces" search="Поиск по сайту" />
+    </div>);
+    const menu= (<div>
+        <Menu zone='Зона обмена' muz='Музыка' dating='Знакомства' blogs='Блоги' groups='Группы' forum='Форум' chat='Чат' games='Игры' />
+    </div>);
+    const foot= (<div>
+        <Footer about='О сайте' regulations='Правила' help='Помощь' advertising='Реклама' contacts='Контакты' />
+    </div>);
+
+    ReactDOM.render(nav, header);
+    ReactDOM.render(menu, body);
+    ReactDOM.render(foot, footer);
+</script>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+</html>
